@@ -42,6 +42,11 @@ Get the last 5 items (title and link) from elife rss feed without generated id
 python3 get_rss.py http://elife.elifesciences.org/rss/recent.xml -i "title" "link" --limit 5 --no-id
 ```
 
+Write items from elife rss feed to a file (elife.json) without generated id
+```
+python3 get_rss.py http://elife.elifesciences.org/rss/recent.xml -i title --no-id --file elife.json
+```
+
 ## RSS feeds examples
 
 ### News
