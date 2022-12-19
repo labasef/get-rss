@@ -10,8 +10,6 @@ import sys
 from io import StringIO
 
 
-# structure dictionnary; key: key to be found in rss feed, value: mapped key for json output
-struct = {"title": "text"}
 parser = argparse.ArgumentParser(description="A simple rss feed consumer. writes a json output to stdout or specific file")
 parser.add_argument('url', type=str, nargs='+', help='The rss feed url to get')
 parser.add_argument('-i', '--items', type=str, nargs='+', help='Optional items (keys) to extract from the rss feed. By default only the title is extracted and mapped as text; if items are passed, the default behaviour is overridden')
@@ -39,6 +37,9 @@ def consume_feed(url):
     feed = feedparser.parse(url)
     if args.items:
         struct = {item: item for item in args.items}
+    else:
+        # default structure dictionnary; key: key to be found in rss feed, value: mapped key for json output
+        struct = {"title": "text"}
     if feed:
         for item in feed["items"][:args.limit]:
             try:

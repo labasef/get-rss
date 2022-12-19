@@ -24,3 +24,39 @@ options:
   --id                  This option allows to specify whether a custom id should be added to the items. If id is specified in the items, this option will not override it
   --no-id
 ```
+
+## Examples
+
+Get items from nature rss feed
+```
+python3 get_rss.py "http://www.nature.com/nature/current_issue/rss"
+```
+
+Get the last 2 items (title and link) from lemonde rss feed
+```
+python3 get_rss.py "https://www.lemonde.fr/rss/une.xml" -i "title" "link" --limit 2
+```
+
+Get the last 5 items (title and link) from elife rss feed without generated id
+```
+python3 get_rss.py http://elife.elifesciences.org/rss/recent.xml -i "title" "link" --limit 5 --no-id
+```
+
+## RSS feeds examples
+
+### News
+
+*    Lemonde -  https://www.lemonde.fr/rss/une.xml
+*    LeParisien - https://feeds.leparisien.fr/leparisien/rss
+*    France24 - https://www.france24.com/fr/rss
+*    Francetvinfo - https://www.francetvinfo.fr/titres.rss
+
+### Science
+ 
+*    Nature - http://www.nature.com/nature/current_issue/rss
+*    Science - http://www.sciencemag.org/rss/current.xml
+*    Cell - http://rss.sciencedirect.com/publication/science/00928674
+*    eLife - http://elife.elifesciences.org/rss/recent.xml
+*    PLoS Biology - https://journals.plos.org/plosbiology/feed/atom
+*    PNAS - http://www.pnas.org/rss/current.xml
+
