@@ -24,7 +24,7 @@ parser.set_defaults(_id=True)
 
 def write(arg: dict):
     if args.file:
-        with open(file, 'a') as f:
+        with open(args.file, 'a') as f:
             json.dump(arg, f)
         print(args.file)
     else:
